@@ -59,9 +59,7 @@ export default function Artigo() {
         return <strong className='text-danger'>EXPIRADO</strong>;
       }
     }
-if(token===null){
-   return <Navigate to={'/'} replace/>;
-  }else{
+if(token){
   return (
     <main className='mx-0' style={{backgroundColor: '#e1e8f7', color: '#222'}}>
         <div className='row mx-0'>
@@ -122,5 +120,7 @@ if(token===null){
       <ToastContainer/>
     </main>
   );
+}else{
+     return <Navigate to={'/'} replace/>;
 }
 }
