@@ -24,7 +24,7 @@ export default function Dasbohard() {
    navigator('/agenda');
  }
   // Check if the user is authenticated
-  if(!token){
+  if(token){
     return (
       <main className="App d-flex flex-column min-vh-100" style={{height:'100vh', backgroundColor: '#e1e8f7'}} > 
         <div className='row mx-0'>
