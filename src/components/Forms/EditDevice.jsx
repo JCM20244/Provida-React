@@ -48,7 +48,7 @@ export default function EditDevice(props) {
         setReadStatus(false);
         setAplyingBtn(false);
         setFieldType('date');
-        axios.get('https://app-htrec.vercel.app/fornecedor_nome_view').then((res)=>{
+        axios.get('https://api-provida.onrender.com/fornecedor_nome_view').then((res)=>{
             if(res.data.message.length > 0){
                 setFornecedor(res.data.message);
             }else{
@@ -56,7 +56,7 @@ export default function EditDevice(props) {
             }
         });
        //obter dados da categoria
-        axios.get('https://app-htrec.vercel.app/categoria_descricao_view').then((res)=>{
+        axios.get('https://api-provida.onrender.com/categoria_descricao_view').then((res)=>{
             if (res.data.message.length > 0) {
                 setCategoria(res.data.message);
             }else{
@@ -67,7 +67,7 @@ export default function EditDevice(props) {
     // Submit handler for the form
     function submitHendler(e) {
         e.preventDefault(); //'https://htrecs.onrender.com/update/'
-        axios.put('https://app-htrec.vercel.app/update/' + id, 
+        axios.put('https://api-provida.onrender.com/update/' + id, 
             { referencia: values.ref,
               lote: values.lot,
               categoria: values.codCategoria,
@@ -88,7 +88,7 @@ export default function EditDevice(props) {
     }
 // Delete handler for the delete button
     function deleteHendler(e){
-        axios.delete('https://app-htrec.vercel.app/delete/'+id).then((res)=>{
+        axios.delete('https://api-provida.onrender.com/delete/'+id).then((res)=>{
             if(res.data.message.affectedRows > 0){
                 toast.success('Artigo eliminado com sucesso!');
                 window.location.reload(false);
