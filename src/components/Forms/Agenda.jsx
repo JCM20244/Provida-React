@@ -19,7 +19,7 @@ export default function Agenda() {
   const [countAgendado, setCountAgendado] = useState('');
   // const title = 'DETAILS';https://htrecs.onrender.com/outdate
     useEffect(() => {
-      axios.get('https://app-htrec.vercel.app/lista_artigo_Agendados').then((res)=>{
+      axios.get('https://api-provida.onrender.com/lista_artigo_Agendados').then((res)=>{
             if(res.data.message.length>0){
               setArtigos(res.data.message);
               setCountAgendado(res.data.message.length);
