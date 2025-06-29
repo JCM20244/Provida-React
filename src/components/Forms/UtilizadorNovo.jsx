@@ -13,7 +13,7 @@ export default function UtilizadorNovo() {
        const [previlegioId, setPrevilegioId] = useState(2);
 
         useEffect(()=>{ 
-            axios.get('https://app-htrec.vercel.app/lista_previlegios').then((res) => {
+            axios.get('https://api-provida.onrender.com/lista_previlegios').then((res) => {
                 setPrevilegio(res.data.message);
             }).catch((error) => {       
                 console.error("Error fetching data:", error);
@@ -25,7 +25,7 @@ export default function UtilizadorNovo() {
             if(username === '' || password === '' || email === ''){
                 toast.error("Preencha os dados completos");
             }else{
-                axios.post('https://app-htrec.vercel.app/cadastroUtilizador',{username: username, password: password, email: email, previlegio: previlegioId},)
+                axios.post('https://api-provida.onrender.com/cadastroUtilizador',{username: username, password: password, email: email, previlegio: previlegioId},)
                 .then((data)=>{
                     toast.success(data.data.message);
                     setUsername('');
