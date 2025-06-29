@@ -24,7 +24,7 @@ export default function Forms () {
 
     useEffect(()=>{
         //obter dados do fornecedor
-        axios.get('https://app-htrec.vercel.app/fornecedor_nome_view').then((res)=>{
+        axios.get('https://api-provida.onrender.com/fornecedor_nome_view').then((res)=>{
             if(res.data.message.length > 0){
                 setFornecedor(res.data.message);
             }else{
@@ -32,7 +32,7 @@ export default function Forms () {
             }
         });
         //obter dados da categoria
-        axios.get('https://app-htrec.vercel.app/categoria_descricao_view').then((res)=>{
+        axios.get('https://api-provida.onrender.com/categoria_descricao_view').then((res)=>{
             if (res.data.message.length > 0) {
                 setCategoria(res.data.message);
             }else{
@@ -47,7 +47,7 @@ export default function Forms () {
         if(referencia === '' || lote === '' || quatidade === '' || categoriaId === '' || fornecedorId === '' || prodData === '' || expData === ''){
             toast.error("Preencha os dados completos!");
         }else{
-            axios.post('https://app-htrec.vercel.app/cadastrarArtigo',{referencia: referencia,lote: lote,quatidade:quatidade,categoria: categoriaId,prodData: prodData,expData: expData, fornecedor: fornecedorId},)
+            axios.post('https://api-provida.onrender.com/cadastrarArtigo',{referencia: referencia,lote: lote,quatidade:quatidade,categoria: categoriaId,prodData: prodData,expData: expData, fornecedor: fornecedorId},)
             .then((data)=>{
                 toast.success(data.data.message);
                 // getRef(referencia);
