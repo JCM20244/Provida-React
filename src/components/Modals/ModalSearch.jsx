@@ -11,7 +11,7 @@ export default function ModalSearch({title,content, handleClose}) {
  useEffect(() => {
     
   if (search){
-    axios.put('https://app-htrec.vercel.app/artigos_search/', {search: search}).then((response) => {
+    axios.put('https://api-provida.onrender.com/artigos_search/', {search: search}).then((response) => {
       if(response.data.message.length >0){
         setResults(response.data.message);
       }else{
@@ -52,7 +52,6 @@ export default function ModalSearch({title,content, handleClose}) {
               </Tbody>
             </Table>
           </div>
-         
         </Modal.Body>
     </Modal>  
   );
