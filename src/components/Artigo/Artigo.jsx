@@ -21,7 +21,7 @@ export default function Artigo() {
  
   useEffect(() => {
     if(search){
-        axios.put('https://app-htrec.vercel.app/artigos_search_table/', {search: search})
+        axios.put('https://api-provida.onrender.com/artigos_search_table/', {search: search})
           .then((res) => {
             if(res.data.message.length > 0){
               setArtigo(res.data.message);
@@ -33,7 +33,7 @@ export default function Artigo() {
             toast.error('Error fetching data from server:', error);
           });
     }else{
-      axios.get('https://app-htrec.vercel.app/lista_artigos')
+      axios.get('https://api-provida.onrender.com/lista_artigos')
         .then((res) => {
           if (res.data.message.length > 0) {
             setArtigo(res.data.message);
