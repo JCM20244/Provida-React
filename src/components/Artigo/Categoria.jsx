@@ -13,7 +13,7 @@ export default function Categoria() {
   // Check if the user is authenticated
 
   useEffect(()=>{
-    axios.get('https://api-provida.onrender.com/categoria_view')
+    axios.get('https://api-provida.vercel.app/categoria_view')
       .then((res) => {
         if (res.data.message.length > 0) {
           setCategoria(res.data.message);
