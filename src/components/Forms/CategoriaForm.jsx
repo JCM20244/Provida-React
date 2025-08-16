@@ -16,7 +16,7 @@ export default function CategoriaForm() {
         }
         setvalidate(true);
         if (descricao && tipo) {
-            axios.post('https://api-provida.onrender.com/cadastrarCategoria', { descricao, tipo })
+            axios.post('https://api-provida.vercel.app/cadastrarCategoria', { descricao, tipo })
                 .then((res) => {
                     if (res.data.message.affectedRows > 0) {
                         toast.success('Categoria criada com sucesso!');
