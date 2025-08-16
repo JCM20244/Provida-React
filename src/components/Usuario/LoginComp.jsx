@@ -9,7 +9,7 @@ export default function LoginComp() {
     const [password, setPassword] = useState('');
     const {login} = useAuth();
 
-    const submitHendler =async(e)=> {//https://htrecs.onrender.com/login/
+    const submitHendler =async(e)=> {
         e.preventDefault();
         await login(username, password);
     }
