@@ -8,7 +8,7 @@ export default function FindDevice() {
     const [device, setDevice]= useState([]);
     const [openDetails,setOpenDetails] = useState(false);
     const findHandler = ()=>{
-        axios.get('https://app-htrec.vercel.app/find/'+content).then((res)=>{
+        axios.get('https://api-provida.vercel.app/find/'+content).then((res)=>{
             setDevice(res.data.message[0]);
             setOpenDetails(true);
         });
