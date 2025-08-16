@@ -15,7 +15,7 @@ export default function Email() {
     // Check if the user is authenticated
 
     useEffect(()=>{
-      axios.get('https://api-provida.onrender.com/utilizador_previlegio')
+      axios.get('https://api-provida.vercel.app/utilizador_previlegio')
       .then((res) => {
           setPrev(res.data.message);
       }).catch((error) => {
