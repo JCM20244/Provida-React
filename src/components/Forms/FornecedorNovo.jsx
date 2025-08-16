@@ -11,7 +11,7 @@ export default function FornecedorNovo() {
     const [provinciaSelected, setProvinciaSelected] = useState('');
 
     useEffect(()=>{ 
-        axios.get('https://api-provida.onrender.com/provincia_view').then((res) => {
+        axios.get('https://api-provida.vercel.app/provincia_view').then((res) => {
             if(res.data.message.length > 0){
                 setProvincia(res.data.message);
             }
@@ -31,7 +31,7 @@ export default function FornecedorNovo() {
         }
         setvalidate(true);
         if(nome && contacto){
-            axios.post('https://api-provida.onrender.com/cadastrarFornecedor', { nome: nome, contacto: contacto, provincia: provinciaSelected })
+            axios.post('https://api-provida.vercel.app/cadastrarFornecedor', { nome: nome, contacto: contacto, provincia: provinciaSelected })
                 .then((res) => {
                     if (res.data.message.affectedRows > 0) {
                         toast.success('Fornecedor criado com sucesso!');
