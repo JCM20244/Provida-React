@@ -18,7 +18,7 @@ export default function ArtigoRepostado() {
  
   // const title = 'DETAILS';https://htrecs.onrender.com/outdate
     useEffect(() => {
-      axios.get('https://api-provida.onrender.com/lista_reported_artigo').then((data)=>{
+      axios.get('https://api-provida.vercel.app/lista_reported_artigo').then((data)=>{
         setArtigos(data.data.message);
       }).catch((err)=>{
         console.log('No data founded');
