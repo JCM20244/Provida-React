@@ -14,7 +14,7 @@ export default function Fornecedor() {
  
 
   useEffect(()=>{
-    axios.get('https://api-provida.onrender.com/fornecedor_provincia_view')
+    axios.get('https://api-provida.vercel.app/fornecedor_provincia_view')
     .then((res) => {
       if(res.data.message.length > 0){  
         setFornecedor(res.data.message);
