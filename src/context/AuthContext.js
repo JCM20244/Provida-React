@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
     }
 
     const login = async (username, password) => {
-            await axios.post('https://api-provida.onrender.com/api/auth/login', { username, password })
+            await axios.post('https://api-provida.vercel.app/api/auth/login', { username, password })
             .then((res) =>{
                 if(res.data.user.token){
                     loginData(res.data.user.token, res.data.user.userId, res.data.user.username);
@@ -52,7 +52,7 @@ export const AuthProvider = ({ children }) => {
 
     const logout = async () => {
         try {
-            await axios.post('https://api-provida.onrender.com/api/auth/logout');
+            await axios.post('https://api-provida.vercel.app/api/auth/logout');
                 localStorage.removeItem('authToken');
                 localStorage.removeItem('userId');
                 localStorage.removeItem('previlege');
@@ -79,7 +79,7 @@ export const AuthProvider = ({ children }) => {
 
     const register = async (username, password) => {
         try {
-            const response = await axios.post('https://api-provida.onrender.com/api/auth/register', { username, password });
+            const response = await axios.post('https://api-provida.vercel.app/api/auth/register', { username, password });
             return { success: true, message: response.data.message };
         } catch (error) {
             console.error('Error registering:', error);
